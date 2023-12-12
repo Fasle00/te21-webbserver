@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    {% block navbar %}
-    {% endblock %}
+    {% include 'components/nav.njk' %}
     {% block content %}
     {% endblock %}
+    {% include 'components/footer.njk' %}
 </body>
 
 </html>
