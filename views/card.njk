@@ -1,0 +1,37 @@
+{% extends "layout.njk" %}
+{% block content %}
+<main class="grid-area">
+        <h1>{{ title }}</h1>
+        
+        <form action="/xmas" method="post" class="greetingForm">
+                <label for="name">Namn: </label>
+                <input type="text" name="name" id="name" required>
+                <label for="greeting">Hälsning: </label>
+                <input type="text" name="greeting" id="greeting" required>
+                <button type="submit">Skicka</button>
+        </form>
+
+        <div class="card breakout">
+                <p>{{greeting}}</p>
+                <p>från {{name}}</p>
+        </div>
+        <script>
+                const input = document.querySelector('#name');
+                input.addEventListener('oninput', (e) => {
+                        if(input.value.length > 15){
+                        input.value = setLength(input.value, 15);
+                        console.log(input.value);
+                }
+                function setLength(inputString, length) {
+                        let out = "";
+                        for (let i = 0; i < length; i++) {
+                                if (i >= inputString.length) break;
+                                out += inputString.charAt(i)
+                        }
+                        return out;
+                }
+        })
+
+        </script>
+</main>
+{% endblock %}

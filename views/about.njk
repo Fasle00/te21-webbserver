@@ -2,5 +2,24 @@
 {% block content %}
 <main class="grid-area">
         <h1>{{ title }}</h1>
+        <h2>Hur funkar det</h2>
+        <p>sidan hostas genom en node-server</p>
+        <p>klienten skickar sedan en <code>GET</code> request till servern som sedan skickar tillbaka information till
+                klienten</p>
+        <p>när jag sen går till julkortsidan så finns det ett formulär som du skriver in ditt namn och ett medelande,
+                när du sen trycker på knappen "Skicka" så skickar klienten en <code>POST</code> request till servern med
+                informationen som du skrivit in i formuläret. Servern skickar sedan tillbaka informationen till
+                medelanderutan.</p>
+        <p>för att göra alla sidor så använder jag paketet nunjucks för att göra templates så jag kan enkelt göra en ny
+                sida genom att bara göra en ny route och skicka den sidans information till min template och vips så har
+                jag en ny sida</p>
+        <p>för att centrera sidan så har jag använt ett ganska avanserat system med "display: grid" som grund. Jag använder då grid-template-column för att sedan enkelt kunna göra hela sidan centrerad och sen kunna komma och ändra så att tex en bild är full bred eller att texten hoppar ut genom att bara lägga till klasserna "full-width" eller "breakout"</p>
+        <p class="breakout">det här är ett exempel på "breakout" som jag kan använda för att ge extra fokus på visst innehåll.
+                här under så är ett exempel på "full-width"
+        </p>
+        <section class="full-width ">
+                <img src="https://unsplash.it/400/300" alt="" class="full-width">
+
+        </section>
 </main>
 {% endblock %}
